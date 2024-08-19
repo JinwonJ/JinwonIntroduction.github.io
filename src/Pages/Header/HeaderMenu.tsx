@@ -6,7 +6,7 @@ const HeaderMenu = () => {
     <div id="HeaderMenu">
       {HeaderMenuItem.map((item) => (
         <div className="MenuList">
-          <div>{item.Title}</div>
+          <div className="MenuListItem">{item.Title}</div>
         </div>
       ))}
     </div>

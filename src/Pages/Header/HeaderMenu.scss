@@ -3,4 +3,13 @@
   width: 100%;
   align-items: center;
   justify-content: center;
+  .MenuList {
+    color: white;
+    .MenuListItem {
+      display: flex;
+      flex: 1; /* 각 항목이 동일한 비율로 공간을 차지하게 함 */
+      text-align: center; /* 텍스트를 가운데 정렬 */
+      padding: 10px 20px; /* 상하 패딩(간격) 설정 */
+    }
+  }
 }
