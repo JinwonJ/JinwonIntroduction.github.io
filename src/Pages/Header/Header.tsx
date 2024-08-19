@@ -1,13 +1,15 @@
-import React from "react"
-
+import React from "react";
+import HeaderMenu from "./HeaderMenu.tsx";
 
 const Header = () => {
-    return (
-        <div id="Header">
-            ? Header는 뭘로 해야 좋을 소개페이지 일까
-            
-        </div>
-    )
-}
+  return (
+    <div id="Header">
+      <div>Jinwon Introducton & Player</div>
+      <div>
+        <HeaderMenu />
+      </div>
+    </div>
+  );
+};
 
-export default Header
+export default Header;
