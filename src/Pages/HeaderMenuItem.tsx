@@ -1,6 +1,7 @@
 export const HeaderMenuItem = [
   {
     Title: "PRODUCT",
+    SubTitle: "EXPLANATION",
   },
   {
     Title: "CONNECTED HOME",
