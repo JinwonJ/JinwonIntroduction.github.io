@@ -7,7 +7,6 @@ const HeaderMenu = () => {
 
   const onMouseHover = (index: number) => {
     setHoveredIndex(index);
-    console.log(index);
   };
 
   const offMouseHover = () => {
@@ -19,7 +18,7 @@ const HeaderMenu = () => {
       {HeaderMenuItem.map((item, index) => (
         <div key={index} className="MenuList" onMouseOver={() => onMouseHover(index)} onMouseOut={offMouseHover}>
           <div className="MenuListItem">{item.Title}</div>
-          {hoveredIndex === index && item.SubTitle && <div className="SubTitle">{item.SubTitle}</div>}
+          {hoveredIndex === index && item.SubTitle && <button className="SubTitle">{item.SubTitle}</button>}
         </div>
       ))}
     </div>
