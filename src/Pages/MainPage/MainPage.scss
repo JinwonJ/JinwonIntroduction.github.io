@@ -3,14 +3,22 @@
     width: 100%;
     height: 100%;
   }
-  .MainPageComment {
+  .MainPageCommentWrap {
     position: absolute;
     display: flex;
+    flex-direction: column;
     align-items: center;
     color: white;
-    font-size: 40px;
-    font-weight: bold;
-    top: 50%;
+    justify-content: left;
+    top: 48%;
     left: 10%;
+    .MainPageComment {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .MainPageSubComment {
+      font-size: 25px;
+      font-weight: 500;
+    }
   }
 }

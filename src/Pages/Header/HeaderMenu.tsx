@@ -5,20 +5,24 @@ import "./HeaderMenu.scss";
 const HeaderMenu = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const onMouseHover = (index: number) => {
+  const onMouseEnter = (index: number) => {
     setHoveredIndex(index);
   };
 
-  const offMouseHover = () => {
+  const onMouseLeave = () => {
     setHoveredIndex(null);
   };
 
   return (
     <div id="HeaderMenu">
       {HeaderMenuItem.map((item, index) => (
-        <div key={index} className="MenuList" onMouseOver={() => onMouseHover(index)} onMouseOut={offMouseHover}>
+        <div key={index} className="MenuList" onMouseEnter={() => onMouseEnter(index)} onMouseLeave={onMouseLeave}>
           <div className="MenuListItem">{item.Title}</div>
-          {hoveredIndex === index && item.SubTitle && <button className="SubTitle">{item.SubTitle}</button>}
+          {hoveredIndex === index && item.SubTitle && (
+            <div className="SubTitle" onMouseEnter={() => onMouseEnter(index)} onMouseLeave={onMouseLeave}>
+              {item.SubTitle}
+            </div>
+          )}
         </div>
       ))}
     </div>

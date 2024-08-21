@@ -20,7 +20,10 @@ const MainPage = () => {
       >
         <source src="./video/MainPageMp4.mp4" type="video/mp4" />
       </video>
-      <div className="MainPageComment">Introducing Jinwon</div>
+      <div className="MainPageCommentWrap">
+        <div className="MainPageComment">Introducing Jinwon Jeong</div>
+        <div className="MainPageSubComment">Sales description for the person above</div>
+      </div>
     </div>
   );
 };
