@@ -14,10 +14,14 @@
       font-weight: bold;
       margin: 20px;
     }
-    .SearchIcon {
-      width: 30px;
-      height: 30px;
-      margin-right: 20px;
+    .SearchButton {
+      border: none;
+      background: none;
+      .SearchIcon {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+      }
     }
   }
 }

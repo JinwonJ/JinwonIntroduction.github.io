@@ -6,7 +6,9 @@ const Header = () => {
     <div id="Header">
       <div className="HeaderTitleWrap">
         <div className="HeaderTitle">Jinwon Introducton & Player</div>
-        <img className="SearchIcon" src="../images/SearchIcon.png" alt="Search" />
+        <button className="SearchButton">
+          <img className="SearchIcon" src="../images/SearchIcon.png" alt="Search" />
+        </button>
       </div>
       <div>
         <HeaderMenu />
