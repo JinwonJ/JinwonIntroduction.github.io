@@ -1,16 +1,41 @@
+// #Header {
+//   position: fixed;
+//   z-index: 1;
+//   width: 100%;
+//   .HeaderTitleWrap {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     .HeaderTitle {
+//       color: white;
+//       font-size: 30px;
+//       font-weight: bold;
+//       margin: 20px;
+//     }
+//     .SearchButton {
+//       border: none;
+//       background: none;
+//       .SearchIcon {
+//         width: 30px;
+//         height: 30px;
+//         margin-right: 20px;
+//       }
+//     }
+//   }
+// }
+
 #Header {
   position: fixed;
   z-index: 1;
   width: 100%;
   .HeaderTitleWrap {
-    // margin: 20px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     .HeaderTitle {
       color: white;
-      font-size: 30px;
       font-weight: bold;
       margin: 20px;
     }
@@ -22,6 +47,42 @@
         height: 30px;
         margin-right: 20px;
       }
+    }
+  }
+}
+
+/* 모바일 전용 스타일 */
+@media (max-width: 767px) {
+  .HeaderMobile {
+    .HeaderTitle {
+      font-size: 20px;
+    }
+
+    .SearchIcon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .MenuList {
+      display: none; /* 모바일에서는 메뉴를 숨기거나 햄버거 메뉴로 구현 가능 */
+    }
+  }
+}
+
+/* 데스크탑 전용 스타일 */
+@media (min-width: 768px) {
+  .HeaderDesktop {
+    .HeaderTitle {
+      font-size: 30px;
+    }
+
+    .MenuList {
+      display: flex;
+    }
+
+    .SearchIcon {
+      width: 24px;
+      height: 24px;
     }
   }
 }
