@@ -52,7 +52,7 @@
 import React from "react";
 import HeaderMenu from "./HeaderMenu.tsx";
 import "./Header.scss";
-import { PC, Mobile } from "../../MediaQuery/MideaQuery.tsx";
+import { PC, Mobile } from "../../MediaQuery/MediaQuery.tsx";
 
 const Header = () => {
   return (
@@ -75,7 +75,7 @@ const Header = () => {
           <div className="HeaderTitleWrap">
             <div className="HeaderTitle">Jinwon Introduction & Player</div>
             <button className="SearchButton">
-              <img className="SearchIcon" src="../images/SearchIcon.png" alt="Search" />
+              <img className="SearchIcon" src="../images/MobileMenu.png" alt="Menu" />
             </button>
           </div>
         </div>
