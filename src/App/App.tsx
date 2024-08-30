@@ -9,8 +9,8 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/introduction" element={<Introduction />} />
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<MainPage />} />
+        <Route path={`${process.env.PUBLIC_URL}/introduction`} element={<Introduction />} />
       </Routes>
     </div>
   );
