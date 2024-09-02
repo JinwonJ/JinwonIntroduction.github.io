@@ -2,7 +2,7 @@
   "name": "jinwon-view",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JinwonJ.github.io",
+  "homepage": "https://jinwonj.github.io/JinwonIntroduction.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^5.17.0",

@@ -2,20 +2,24 @@
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .MenuList {
   position: relative;
-  color: white;
-
-  .MenuListItem {
-    display: flex;
-    flex: 1;
-    text-align: center;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
+  margin-left: 20px;
+  .MenuListItemButton {
+    border: none;
+    background: none;
+    color: white;
+    .MenuListItem {
+      display: flex;
+      flex: 1;
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   }
 
   .SubTitle {

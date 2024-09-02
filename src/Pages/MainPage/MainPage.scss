@@ -1,24 +1,116 @@
+// #MainPage {
+//   .MainPageVideo {
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .MainPageCommentWrap {
+//     position: absolute;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     color: white;
+//     justify-content: left;
+//     top: 48%;
+//     left: 10%;
+//     .MainPageComment {
+//       font-size: 40px;
+//       font-weight: bold;
+//     }
+//     .MainPageSubComment {
+//       font-size: 25px;
+//       font-weight: 500;
+//     }
+//   }
+// }
 #MainPage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
   .MainPageVideo {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; // 텍스트가 동영상 위에 표시되도록 설정
   }
+
   .MainPageCommentWrap {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; // 텍스트를 왼쪽 정렬
     color: white;
-    justify-content: left;
+    justify-content: flex-start; // 텍스트를 위쪽 정렬
     top: 48%;
     left: 10%;
+    transform: translateY(-50%); // 수직 중앙 정렬 효과
+
     .MainPageComment {
       font-size: 40px;
       font-weight: bold;
     }
+
     .MainPageSubComment {
       font-size: 25px;
       font-weight: 500;
     }
+    .MainPageMoreButtonWrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .DowonImage {
+        width: 15px;
+        height: 20px;
+        margin-left: 6px;
+      }
+      .MainPageMoreButton {
+        animation: buttonFadeInOut 2s infinite;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        margin-top: 25px;
+        border: none;
+        border-radius: 16px;
+        background: white;
+        font-size: 20px;
+        color: gray;
+        padding: 4px 12px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .MainPageCommentWrap {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); // 모바일에서 완벽한 가운데 정렬
+      align-items: center; // 수평 중앙 정렬
+      text-align: center; // 텍스트 중앙 정렬
+      width: 300px;
+    }
+
+    .MainPageComment {
+      font-size: 30px; // 모바일에서 텍스트 크기 조정
+    }
+
+    .MainPageSubComment {
+      font-size: 20px; // 모바일에서 서브 텍스트 크기 조정
+    }
+  }
+}
+@keyframes buttonFadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

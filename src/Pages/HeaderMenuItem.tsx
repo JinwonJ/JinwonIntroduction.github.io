@@ -2,7 +2,7 @@ export const HeaderMenuItem = [
   {
     Title: "PRODUCT",
     SubTitle: "EXPLANATION",
-    TitleUrl: "explanation",
+    // TitleUrl: "explanation",
   },
   {
     Title: "CONNECTED HOME",
@@ -21,5 +21,6 @@ export const HeaderMenuItem = [
   },
   {
     Title: "HELP & SUPPORT",
+    TitleUrl: "/introduction",
   },
 ];
