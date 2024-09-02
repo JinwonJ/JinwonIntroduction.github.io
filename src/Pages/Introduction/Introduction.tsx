@@ -93,7 +93,7 @@ const Introduction = () => {
 
       <div className="Section Section3" ref={(el) => (sectionsRef.current[2] = el)}>
         <div className="Content">
-          <h2 className="ContentTitle">Work Product</h2>
+          <h2 className="ContentTitle">Work Experience</h2>
           <li>Development of map-based pages for the service</li>
           <li>Creation of various promotional pages</li>
         </div>
