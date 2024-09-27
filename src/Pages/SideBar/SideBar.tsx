@@ -11,8 +11,9 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
         &times;
       </button>
       <ul className="SidebarMenu">
-        {HeaderMenuItem.map((Item) => (
+        {HeaderMenuItem.map((Item: any, index: any) => (
           <li
+            key={index}
             onClick={() => {
               if (Item.TitleUrl) {
                 navigate(Item.TitleUrl);

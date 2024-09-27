@@ -1,11 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-export const Store = configureStore({
+import translateReducer from "./LanguageType/TranslateSlice.tsx";
+const Store = configureStore({
   reducer: {
-    // hexagonData: hexagonReducer,
+    translate: translateReducer,
   },
 });
 
 export type RootState = ReturnType<typeof Store.getState>;
-export type AppDispatch = typeof Store.dispatch;
-
 export default Store;

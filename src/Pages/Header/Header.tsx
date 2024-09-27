@@ -4,6 +4,9 @@ import "./Header.scss";
 import { PC, Mobile } from "../../MediaQuery/MediaQuery.tsx";
 import Sidebar from "../SideBar/SideBar.tsx";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux"; // useSelector 훅을 가져옵니다.
+import { selectTranslation } from "../../App/Redux/LanguageType/TranslateSlice.tsx";
+
 const Header = () => {
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -21,6 +24,8 @@ const Header = () => {
       navigate("/");
     }
   };
+  const title = useSelector((state) => selectTranslation(state, "title"));
+
   return (
     <>
       <PC>
@@ -32,7 +37,7 @@ const Header = () => {
                 handleNavigateHome();
               }}
             >
-              Jinwon Introduction & Player
+              {title}
             </div>
             <button className="SearchButton">
               <img className="SearchIcon" src=" images/SearchIcon.png" alt="Search" />
@@ -53,7 +58,7 @@ const Header = () => {
                 closeSidebar();
               }}
             >
-              Jinwon Introduction & Player
+              {title}
             </div>
             <button className="SearchButton" onClick={openSidebar}>
               <img className="SearchIcon" src="images/MobileMenu.png" alt="Menu" />

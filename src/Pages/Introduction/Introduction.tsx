@@ -1,49 +1,24 @@
-// import React, { useEffect } from "react";
-// import "./Introduction.scss";
-
-// const Introduction = () => {
-//   useEffect(() => {
-//     if ("scrollRestoration" in window.history) {
-//       window.history.scrollRestoration = "manual";
-//     }
-//     window.scrollTo(0, 0);
-//   }, []);
-//   return (
-//     <div id="Introduction">
-//       <div className="Section Section1">
-//         <div className="Content">
-//           <h2 className="ContentTitle">About me</h2>
-//           <li>Developer who dreams of full stack</li>
-//           <li>Developers accommodating development-related requests</li>
-//           <li>Developer with backend experience</li>
-//         </div>
-//       </div>
-
-//       <div className="Section Section2">
-//         <div className="Content">
-//           <h2 className="ContentTitle">Work Experience</h2>
-//           <li>Backend (2020.12 ~ 2022.06) Work focused on member management using Python</li>
-//           <li>Front-end (2022.06 ~ 2024.07) React-based various page production</li>
-//         </div>
-//       </div>
-
-//       <div className="Section Section3">
-//         <div className="Content">
-//           <h2 className="ContentTitle">Work Product</h2>
-//           <li>Development of map-based pages for the service</li>
-//           <li>Creation of various promotional pages</li>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Introduction;
 import React, { useEffect, useRef } from "react";
 import "./Introduction.scss";
+import { selectTranslation } from "../../App/Redux/LanguageType/TranslateSlice.tsx";
+import { useSelector } from "react-redux";
+
+const Section = ({ sectionTitle, sectionInformation }) => (
+  <div className="Content">
+    <h2 className="ContentTitle">{sectionTitle}</h2>
+    <ul>
+      {sectionInformation.map((info, index) => (
+        <li key={index}>{info}</li>
+      ))}
+    </ul>
+  </div>
+);
 
 const Introduction = () => {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Redux에서 sections 배열 전체를 가져옴
+  const sections = useSelector((state) => selectTranslation(state, "sections"));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -56,9 +31,7 @@ const Introduction = () => {
           }
         });
       },
-      {
-        threshold: 0.5,
-      },
+      { threshold: 0.5 },
     );
 
     sectionsRef.current.forEach((section) => {
@@ -74,30 +47,16 @@ const Introduction = () => {
 
   return (
     <div id="Introduction">
-      <div className="Section Section1" ref={(el) => (sectionsRef.current[0] = el)}>
-        <div className="Content">
-          <h2 className="ContentTitle">About me</h2>
-          <li>Developer who dreams of full stack</li>
-          <li>Developers accommodating development-related requests</li>
-          <li>Developer with backend experience</li>
+      {sections.map((section, index) => (
+        <div
+          className={`Section Section${index + 1}`}
+          style={{}}
+          ref={(el) => (sectionsRef.current[index] = el)}
+          key={index}
+        >
+          <Section sectionTitle={section.sectionTitle} sectionInformation={section.sectionInformation} />
         </div>
-      </div>
-
-      <div className="Section Section2" ref={(el) => (sectionsRef.current[1] = el)}>
-        <div className="Content">
-          <h2 className="ContentTitle">Work Experience</h2>
-          <li>Backend (2020.12 ~ 2022.06) Work focused on member management using Python</li>
-          <li>Front-end (2022.06 ~ 2024.07) React-based various page production</li>
-        </div>
-      </div>
-
-      <div className="Section Section3" ref={(el) => (sectionsRef.current[2] = el)}>
-        <div className="Content">
-          <h2 className="ContentTitle">Work Experience</h2>
-          <li>Development of map-based pages for the service</li>
-          <li>Creation of various promotional pages</li>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
